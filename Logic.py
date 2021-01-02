@@ -1,21 +1,34 @@
 import pytube
+from tkinter import messagebox
 import os
 
-def video():
-    dowlink = input("Enter a link to download vidoe: ")
+def video(dowlink,d = os.chdir("/home/evildevil127/Downloads")):
+    
     try:
         yt = pytube.YouTube(dowlink)
-        showName = yt.title
-        print(showName)
         Stream = yt.streams.filter(progressive=True,file_extension='mp4').last()
-        Stream.download()
+        try:
+            Stream.download()
+            messagebox._show("Done","Video is downloaded")
+        except Exception as down:
+                messagebox.showerror("error","Can't connect to Net")
     except Exception as link:
-        print('Error...\nEnter a correct Link')
+        messagebox.showerror("error",'Enter a correct Link')
 
-def Playlist():
-    dowlink = input("Enter a link to download full playlist: ")
-    yt = pytube.Playlist(dowlink)
-    print(yt.title)
-    for videos in yt.videos:
-        videos.streams.filter(progressive=True,file_extension='mp4').last().download()
+def Playlist(dowlink, d = os.chdir("/home/evildevil127/Downloads")):
+    try:
+        yt = pytube.Playlist(dowlink)
+        for videos in yt.videos:
+            try:
+                videos.streams.filter(progressive=True,file_extension='mp4').last().download()
+            except Exception as down:
+                messagebox.showerror("error","Can't connect to Net")
+        messagebox._show("Done","Playlist is downloaded")
+    except Exception as link:
+        messagebox.showerror("error",'Enter a correct Link')
+
+if __name__ == "__main__":
+    # os.chdir("/home/evildevil127/Downloads")
+    print(os.getcwd())
+    video("https://youtu.be/1XEZBKvo5Uc")
 
