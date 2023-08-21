@@ -1,30 +1,30 @@
 import pytube
 from tkinter import messagebox
 import os
-import earthpy as et
+# import earthpy as et
 # Home = et.io.HOME
 # saveToFile = Home + '\Downloads'
 # saveFiles = os.path.join(saveToFile)
 # saveFile = os.chdir(saveFiles)
 # saveFile
 
-def SaveFile(FileName):
-    Home = et.io.HOME
-    saveToFile = Home + '\Downloads\\' + FileName
-    saveFiles = os.path.join(saveToFile)
+# def SaveFile(FileName):
+#     Home = et.io.HOME
+#     saveToFile = Home + '\Downloads\\' + FileName
+#     saveFiles = os.path.join(saveToFile)
     
     
-    try:
-        os.mkdir(saveFiles)
-    except OSError as error: 
-        pass  
-    os.chdir(saveFiles)
-    show = print(os.getcwd())
-    show
+    # try:
+    #     os.mkdir(saveFiles)
+    # except OSError as error: 
+    #     pass  
+    # os.chdir(saveFiles)
+    # show = print(os.getcwd())
+    # show
 
 
 def video(dowlink):
-    SaveFile("YTVidoes")
+    # SaveFile("YTVidoes")
     
     # saveFile = os.chdir(saveFiles)
     # if not saveFile:
@@ -43,7 +43,7 @@ def video(dowlink):
         messagebox.showerror("error",'Enter a correct Link')
 
 def Playlist(downlink):
-    SaveFile("YTPlaylist")
+    # SaveFile("YTPlaylist")
     try:
         yt = pytube.Playlist(downlink)
         for videos in yt.videos:
