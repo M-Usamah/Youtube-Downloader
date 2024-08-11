@@ -62,11 +62,15 @@ if __name__ == "__main__":
                         1: Video
                         2: Playlist
                         3: Exit
+                        Select the option: 
                         '''))
-        url = input("enter Url")
         if opt == 1:
+            url = input("enter Url: ")
+            print(f"are you going to download this {url} video")
             video(url)
         elif opt == 2:
+            url = input("enter Url: ")
+            print(f"are you going to download this {url} playlist")
             Playlist(url)
         elif opt == 3:
             break
