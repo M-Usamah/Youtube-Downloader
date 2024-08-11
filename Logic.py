@@ -57,5 +57,18 @@ def Playlist(downlink):
 
 if __name__ == "__main__":
     # SaveFile("Hello")
-    video("https://www.youtube.com/watch?v=31HfP81oWDI")
-    Playlist("https://youtube.com/playlist?list=PLzMcBGfZo4-mP7qA9cagf68V06sko5otr")
+    while True:
+        opt = int(input('''
+                        1: Video
+                        2: Playlist
+                        3: Exit
+                        '''))
+        url = input("enter Url")
+        if opt == 1:
+            video(url)
+        elif opt == 2:
+            Playlist(url)
+        elif opt == 3:
+            False
+        else:
+            continue
