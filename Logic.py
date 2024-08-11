@@ -69,6 +69,6 @@ if __name__ == "__main__":
         elif opt == 2:
             Playlist(url)
         elif opt == 3:
-            False
+            break
         else:
             continue
